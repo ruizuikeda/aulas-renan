@@ -4,12 +4,12 @@ $usuario_login = $_GET["login"];
 $usuario_senha = $_GET["senha"];
 
 if ($usuario_login == '') {
-    header ('Location: login.php?msg=1');
+    header ('Location: index.php?msg=1');
     exit;
 }
 
 if ($usuario_senha == '') {
-    header ('Location: login.php?msg=2');
+    header ('Location: index.php?msg=2');
     exit;
 }
 
@@ -31,7 +31,7 @@ switch($valida) {
         $_SESSION["nome_usuario"]=$usuario_login;
         break;
     default:
-        header ('Location: login.php?msg=3');
+        header ('Location: index.php?msg=3');
         exit;
         break;
 
