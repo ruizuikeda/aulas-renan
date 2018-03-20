@@ -1,11 +1,6 @@
 <?php
 session_start();
 
-$_SESSION["nome_usuario"];
-
-
-
-
 ?>
 <html lang="pt">
     <head>
@@ -17,7 +12,7 @@ $_SESSION["nome_usuario"];
         <div class="container-fluid">
             <div class="jumbotron">
                 <div class="row" class="col-md-12">
-                    <p class="bg-primary"><div class="col-md-9"><h3> <?php echo 'Bem vindo Sr.(a) '.$_SESSION["nome_usuario"]; ?></h3></div></p>
+                    <p class="bg-primary"><div class="col-md-9"><h3> <?php echo 'Bem vindo Sr.(a) '.$_SESSION["logado_nome"].' '.$_SESSION['logado_sobrenome']; ?></h3></div></p>
             </div>
         </div>
         </div>
