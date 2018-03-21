@@ -46,6 +46,7 @@ switch ($ocorrencia){
                         <input type="password"  name = "senha" class="form-control">
                     </div>
                     <button type="submit" class="btn btn-primary">Entrar</button>
+                    <a href="cadastro.php" class="btn btn-default" role="button">Cadastrar-se</a>
 
                 </div>
                 </div>
