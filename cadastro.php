@@ -18,45 +18,45 @@
                <div class="col-md-12 text-center">
                 <div class="jumbotron">
                 <h1><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tela de Cadastro</font></font></h1>
-                <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Uma página de teste para executar oque foi aprendido até agora. </font><font style="vertical-align: inherit;">Objetivo é criar uma tela simples e funcional com Bootstrap.</font></font></p>
+                <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Uma página de teste para executar oque foi aprendido até agora. </font><font style="vertical-align: inherit;">Objetivo é criar uma tela simples e funcional usando PHP e Bootstrap.</font></font></p>
                 </div>
                </div>
             </div>
         </div>
-        <form class="form-horizontal col-md-6">
+        <form action="action/validar.php" method="post" class="form-horizontal col-md-6">
             <div class="form-group col-md-8">
                 <label for="exampleInputName2" class="col-md-6">Nome</label>
-                <input type="text" class="form-control" id="cadastro_nome" placeholder="Digite seu nome">
+                <input type="text" class="form-control" name="cadastro_nome" placeholder="Digite seu nome">
             </div>
 
             <div class="form-group col-md-8">
                 <label for="exampleInputEmail2" class="col-md-6">Sobrenome</label>
-                <input type="text" class="form-control" id="cadastro_sobrenome" placeholder="Digite seu Sobrenome">
+                <input type="text" class="form-control" name="cadastro_sobrenome" placeholder="Digite seu Sobrenome">
             </div>
 
             <div class="form-group col-md-8">
                 <label for="exampleInputName2" class="col-md-6">Login</label>
-                <input type="text" class="form-control" id="cadastro_login" placeholder="Seu Login">
+                <input type="text" class="form-control" name="cadastro_login" placeholder="Seu Login">
             </div>
 
             <div class="form-group col-md-8">
                 <label for="exampleInputEmail2" class="col-md-6">Senha</label>
-                <input type="password" class="form-control" id="cadastro_senha" placeholder="Digite uma Senha">
+                <input type="password" class="form-control" name="cadastro_senha" placeholder="Digite uma Senha">
             </div>
 
 
             <div class= "form-group col-md-8">
                 <label for="exampleInputName2" class="col-md-6">CPF</label>
-                <input type="text" class="form-control" id="cadastro_cpf" placeholder="CPF">
+                <input type="text" class="form-control" name="cadastro_cpf" placeholder="CPF">
             </div>
 
             <div class="form-group col-md-8">
                 <label for="exampleInputEmail2" class="col-md-6">Endereço</label>
-                <input type="text" class="form-control" id="cadastro_endereco" placeholder="Endereço" >
+                <input type="text" class="form-control" name="cadastro_endereco" placeholder="Endereço" >
             </div>
             <div class="form-group col-md-8">
                 <label for="exampleInputEmail2" class="col-md-6">Celular</label>
-                <input type="text" class="form-control" id="cadastro_celular" placeholder="(11) 99999-9999" >
+                <input type="text" class="form-control" name="cadastro_celular" placeholder="(11) 99999-9999" >
             </div>
             <div class="form-group col-md-8">
                 <button type="submit" class="btn btn-primary">Cadastrar</button>

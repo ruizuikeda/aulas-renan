@@ -8,27 +8,32 @@ require_once '../include/db.php';
 /********************************************************/
 /* PARAMETROS DE ENTRADA                                */
 /********************************************************/
+$usuario_nome = $POST["cadastro_nome"];
+$usuario_sobrenome = $POST["cadastro_sobrenome"];
 $usuario_login = $_POST["login"];
 $usuario_senha = $_POST["senha"];
+$usuario_cpf = $POST["cadastro_cpf"];
+$usuario_endereco = $POST["cadastro_endereco"];
+$usuario_celular = $POST["cadastro_celular"];
 
 
 /********************************************************/
 /* VALIDANDO CASO TRIVIAL                               */
 /********************************************************/
-if ($usuario_login == '') {
+/*if ($usuario_login == '') {
     header ('Location: ../index.php?msg=1');
     exit;
 }
 if ($usuario_senha == '') {
     header ('Location: ../index.php?msg=2');
     exit;
-}
+}*/
 
 
 /********************************************************/
 /* VALIDAR O LOGIN PELO DB                              */
 /********************************************************/
-$sql = "
+/*$sql = "
     SELECT *
     FROM usuarios
     WHERE login = '$usuario_login' AND senha = '$usuario_senha' AND status = 1;
@@ -62,7 +67,16 @@ if(mysql_num_rows($result)>0) {
     // não existe nenhum usuário com esse login e senha
     header ('Location: ../index.php?msg=3');
     exit;
-}
+}*/
+
+/********************************************************/
+/* INSERIR DADOS NO BANCO                              */
+/********************************************************/
+$sql = "
+    INSERT INTO cadastro (nome, sobrenome, login, senha, cpf, endereco, celular, )
+    VALUES '$usuario_nome', '$usuario_sobrenome', '$usuario_login', '$usuario_senha', '$usuario_cpf', '$usuario_endereco', '$usuario_celular';
+";
+
 
 
 ?>
