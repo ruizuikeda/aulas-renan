@@ -38,7 +38,10 @@ $retorno_falha          = '../cadastro.php?msg=0';
 /****************************************************************/
 /*  SCRIPT                                                      */
 /****************************************************************/
-
+$sql = "INSERT INTO usuarios VALUES ";
+$sql .= "('$cadastro_nome', '$cadastro_sobrenome', '$cadastro_login', '$cadastro_senha', '$cadastro_cpf', '$cadastro_endereco', '$cadastro_celular')";
+mysqli_query($sql) or die("Erro ao tentar cadastrar registro");
+echo "Cliente cadastrado com sucesso!";
 
 
 
