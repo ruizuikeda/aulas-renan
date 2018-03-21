@@ -23,7 +23,7 @@
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cadastro de usuários</font></font></a></li>
+                            <li><a href=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cadastro de usuários</font></font></a></li>
                             <li><a href="#about"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sobre</font></font></a></li>
                             <li><a href="#contact"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Contato</font></font></a></li>
                             <li class="dropdown">
@@ -39,7 +39,26 @@
                                 </ul>
                             </li>
                         </ul>
-                    </div><!--/.nav-collapse -->
+                    </div>
+                    <script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
+                    <script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'></script>
+                    <script type="text/javascrip">
+                        $('.dropdown-toggle').click(function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        return false;
+                        });
+                        $('.dropdown-menu').click(function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        return false;
+                        });
+                        $(document).ready(function () {
+                        $('.dropdown-toggle').dropdown();
+                        });
+                    </script>
                 </div>
             </nav>
             <div class="page-header">
@@ -72,37 +91,37 @@
                 <div class="form-group col-md-8 checkbox">
                     <label  class="col-md-12"><h4><b>Selecione o gênero</b></h4></label>
                     <label>
-                        <input type="checkbox" value="">
+                        <input type="checkbox" name="cadastro_genero[]" value="1">
                         Ação
                     </label>
                 </div>
                 <div class="form-group col-md-8 checkbox">
                     <label>
-                        <input type="checkbox" value="">
+                        <input type="checkbox" name="cadastro_genero[]" value="2">
                         Luta
                     </label>
                 </div>
                 <div class="form-group col-md-8 checkbox">
                     <label>
-                        <input type="checkbox" value="">
+                        <input type="checkbox" name="cadastro_genero[]" value="3">
                         Terror
                     </label>
                 </div>
                 <div class="form-group col-md-8 checkbox">
                     <label>
-                        <input type="checkbox" value="">
+                        <input type="checkbox" name="cadastro_genero[]" value="4">
                         Sci-fi
                     </label>
                 </div>
                 <div class="form-group col-md-8 checkbox">
                     <label>
-                        <input type="checkbox" value="">
+                        <input type="checkbox" name="cadastro_genero[]" value="5">
                         Aventura
                     </label>
                 </div>
                 <div class= "form-group col-md-8">
                     <label  class="col-md-8"><h4><b>Selecione o estudio de animação</b></h4></label>
-                    <select class="form-control col-md-8">
+                    <select class="form-control col-md-8" size="1" name="editora">
                         <option></option>
                         <option>Graphis Studios Animation</option>
                         <option>Toei Animation</option>
