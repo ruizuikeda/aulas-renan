@@ -40,7 +40,8 @@ $retorno_falha          = '../cadastro.php?msg=0';
 /****************************************************************/
 $sql = "INSERT INTO usuarios VALUES ";
 $sql .= "('$cadastro_nome', '$cadastro_sobrenome', '$cadastro_login', '$cadastro_senha', '$cadastro_cpf', '$cadastro_endereco', '$cadastro_celular')";
-mysqli_query($sql) or die("Erro ao tentar cadastrar registro");
+mysqli_query($conexao,$sql) or die("Erro ao tentar cadastrar registro");
+mysqli_close($conexao);
 echo "Cliente cadastrado com sucesso!";
 
 
