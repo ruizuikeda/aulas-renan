@@ -23,7 +23,7 @@
                </div>
             </div>
         </div>
-        <form action="action/validar.php" method="post" class="form-horizontal col-md-6">
+        <form action="action/inserir_cadastro.php" method="post" class="form-horizontal col-md-6">
             <div class="form-group col-md-8">
                 <label for="exampleInputName2" class="col-md-6">Nome</label>
                 <input type="text" class="form-control" name="cadastro_nome" placeholder="Digite seu nome">
