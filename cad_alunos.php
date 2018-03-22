@@ -65,41 +65,39 @@
                 <div class="jumbotron" style="background-color: #e3f2fd;">
                     <h1>Cadastro de Alunos</h1>
                 </div>
-                <form action="action/inserir_cadastro_animes.php" method="post" class="form-vertical col-md-12">
+                <form action="action/inserir_cadastro_aluno.php" method="post" class="form-vertical col-md-12">
                     <div class="form-group col-md-5">
                         <label class="col-md-6">Nome Completo</label>
-                        <input type="text" class="form-control" name="cadastro_titulo" placeholder="Digite o Nome">
+                        <input type="text" class="form-control" name="cadastro_nome" placeholder="Digite o Nome">
                     </div>
 
                     <div class="form-group col-md-5">
                         <label class="col-md-6">RG</label>
-                        <input type="text" class="form-control" name="cadastro_ano" placeholder="Digite seu RG">
+                        <input type="text" class="form-control" name="cadastro_rg" placeholder="Digite seu RG">
                     </div>
 
                     <div class="form-group col-md-5">
                         <label class="col-md-6">CPF</label>
-                        <input type="text" class="form-control" name="cadastro_ano" placeholder="Digite seu CPF">
+                        <input type="text" class="form-control" name="cadastro_cpf" placeholder="Digite seu CPF">
                     </div>
 
                     <div class="form-group col-md-5">
                         <label class="col-md-6">Data de Nascimento</label>
-                        <input type="text" class="form-control" name="cadastro_ano" placeholder="Digite a data de Nascimento">
+                        <input type="text" class="form-control" name="cadastro_dtNascimento" placeholder="Digite a data de Nascimento">
                     </div>
 
                     <div class= "form-group col-md-5">
-                        <label  class="col-md-6">Selecione Seu Curso</label>
-                        <select class="form-control col-md-8" size="1" name="cadastro_editora">
+                        <label  class="col-md-6">Sexo</label>
+                        <select class="form-control col-md-8" size="1" name="cadastro_sexo">
                             <option></option>
-                            <option value="Graphis Studios Animation">Graphis Studios Animation</option>
-                            <option value="Toei Animation">Toei Animation</option>
-                            <option value="Tezuca Productions">Tezuca Productions</option>
-                            <option value="Bones">Bones</option>
-                            <option value="White Fox">White Fox</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Feminino">Feminino</option>
+                            <option value="Prefiro não Dizer">Prefiro não Dizer</option>
                         </select>
                     </div>
                     <div class= "form-group col-md-5">
-                        <label  class="col-md-6">Período</label>
-                        <select class="form-control col-md-8" size="1" name="cadastro_editora">
+                        <label  class="col-md-6">Selecione o Curso</label>
+                        <select class="form-control col-md-8" size="1" name="cadastro_curso">
                             <option></option>
                             <option value="manha">Manhã</option>
                             <option value="tarde">Tarde</option>
@@ -109,7 +107,7 @@
 
                     <div class= "form-group col-md-5">
                         <label  class="col-md-6">Período</label>
-                        <select class="form-control col-md-8" size="1" name="cadastro_editora">
+                        <select class="form-control col-md-8" size="1" name="cadastro_turno">
                             <option></option>
                             <option value="manha">Manhã</option>
                             <option value="tarde">Tarde</option>
