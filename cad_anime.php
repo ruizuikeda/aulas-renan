@@ -23,19 +23,19 @@
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li><a href=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cadastro de usuários</font></font></a></li>
+                            <li><a href=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Spoilers</font></font></a></li>
                             <li><a href="#about"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sobre</font></font></a></li>
                             <li><a href="#contact"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Contato</font></font></a></li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="true"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cadastro </font></font><span class="caret"></span></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="true"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cadastros </font></font><span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="cadastro.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cadastros de Usuários</font></font></a></li>
                                     <li><a href="cad_anime.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cadastros de Animes</font></font></a></li>
                                     <li><a href="index.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Qualquer coisa</font></font></a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li class="dropdown-header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cabeçalho de navegação</font></font></li>
-                                    <li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Link separado</font></font></a></li>
-                                    <li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mais um link separado</font></font></a></li>
+                                    <li class="dropdown-header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Texto sem link</font></font></li>
+
+
                                 </ul>
                             </li>
                         </ul>
@@ -71,19 +71,19 @@
                     </div>
                 </div>
             </div>
-            <form action="action/inserir_cadastro.php" method="post" class="form-horizontal col-md-6">
+            <form action="action/inserir_cadastro_animes.php" method="post" class="form-horizontal col-md-6">
                 <div class="form-group col-md-8">
-                    <label for="exampleInputName2" class="col-md-6">Título</label>
+                    <label class="col-md-6">Título</label>
                     <input type="text" class="form-control" name="cadastro_titulo" placeholder="Digite o título">
                 </div>
 
                 <div class="form-group col-md-8">
-                    <label for="exampleInputEmail2" class="col-md-6">Ano de Publicação</label>
+                    <label class="col-md-6">Ano de Publicação</label>
                     <input type="text" class="form-control" name="cadastro_ano" placeholder="Digite o ano ">
                 </div>
 
                 <div class="form-group col-md-8">
-                    <label for="exampleInputName2" class="col-md-6">Autor</label>
+                    <label class="col-md-6">Autor</label>
                     <input type="text" class="form-control" name="cadastro_autor" placeholder="Autor">
                 </div>
 
@@ -91,43 +91,43 @@
                 <div class="form-group col-md-8 checkbox">
                     <label  class="col-md-12"><h4><b>Selecione o gênero</b></h4></label>
                     <label>
-                        <input type="checkbox" name="cadastro_genero[]" value="1">
+                        <input type="checkbox" name="cadastro_genero[]" value="Ação">
                         Ação
                     </label>
                 </div>
                 <div class="form-group col-md-8 checkbox">
                     <label>
-                        <input type="checkbox" name="cadastro_genero[]" value="2">
+                        <input type="checkbox" name="cadastro_genero[]" value="Luta">
                         Luta
                     </label>
                 </div>
                 <div class="form-group col-md-8 checkbox">
                     <label>
-                        <input type="checkbox" name="cadastro_genero[]" value="3">
+                        <input type="checkbox" name="cadastro_genero[]" value="Terror">
                         Terror
                     </label>
                 </div>
                 <div class="form-group col-md-8 checkbox">
                     <label>
-                        <input type="checkbox" name="cadastro_genero[]" value="4">
+                        <input type="checkbox" name="cadastro_genero[]" value="Sci-fi">
                         Sci-fi
                     </label>
                 </div>
                 <div class="form-group col-md-8 checkbox">
                     <label>
-                        <input type="checkbox" name="cadastro_genero[]" value="5">
+                        <input type="checkbox" name="cadastro_genero[]" value="Aventura">
                         Aventura
                     </label>
                 </div>
                 <div class= "form-group col-md-8">
                     <label  class="col-md-8"><h4><b>Selecione o estudio de animação</b></h4></label>
-                    <select class="form-control col-md-8" size="1" name="editora">
+                    <select class="form-control col-md-8" size="1" name="cadastro_editora">
                         <option></option>
-                        <option>Graphis Studios Animation</option>
-                        <option>Toei Animation</option>
-                        <option>Tezuca Productions</option>
-                        <option>Bones</option>
-                        <option>White Fox</option>
+                        <option value="Graphis Studios Animation">Graphis Studios Animation</option>
+                        <option value="Toei Animation">Toei Animation</option>
+                        <option value="Tezuca Productions">Tezuca Productions</option>
+                        <option value="Bones">Bones</option>
+                        <option value="White Fox">White Fox</option>
                     </select>
                 </div>
                 <div class="form-group col-md-8">
@@ -135,6 +135,7 @@
                 </div>
 
             </form>
+
         </body>
     </head>
 </html>
