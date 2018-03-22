@@ -1,6 +1,6 @@
 <?php
 /********************************************************************/
-/*  Coletânia de funções associadas a cadastro                      */
+/*  Coletânia de funções associadas a cadastro dos animes           */
 /********************************************************************/
 function phpLibCadastro_insert_animes_cadastrar_novo_anime($cadastro_titulo, $cadastro_ano, $cadastro_autor, $cadastro_editora) {
     $sql = "
