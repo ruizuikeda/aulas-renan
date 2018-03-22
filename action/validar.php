@@ -59,7 +59,7 @@ if(mysql_num_rows($result)>0) {
     $_SESSION['logado_celular']     = $r[0]['celular'];
 
     // vamos pra home
-    header('Location: ../home.php');
+    header('Location: ../cad_anime.php');
     exit;
 
 

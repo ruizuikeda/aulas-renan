@@ -23,7 +23,7 @@ $cadastro_celular       = (string)$_POST['cadastro_celular'];
 /****************************************************************/
 /*  CONFIGURAÇÕES                                               */
 /****************************************************************/
-$retorno_sucesso        = '../cadastro.php?msg=1';
+$retorno_sucesso        = '../cad_anime.php?msg=1';
 $retorno_falha          = '../cadastro.php?msg=0';
 
 

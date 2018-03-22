@@ -71,31 +71,32 @@
                     </div>
                 </div>
             </div>
-            <form action="action/inserir_cadastro_animes.php" method="post" class="form-horizontal col-md-6">
-                <div class="form-group col-md-8">
+            <div class="col-md-4">
+               <form action="action/inserir_cadastro_animes.php" method="post" class="form-vertical col-md-12">
+                <div class="form-group col-md-12">
                     <label class="col-md-6">Título</label>
                     <input type="text" class="form-control" name="cadastro_titulo" placeholder="Digite o título">
                 </div>
 
-                <div class="form-group col-md-8">
+                <div class="form-group col-md-12">
                     <label class="col-md-6">Ano de Publicação</label>
                     <input type="text" class="form-control" name="cadastro_ano" placeholder="Digite o ano ">
                 </div>
 
-                <div class="form-group col-md-8">
+                <div class="form-group col-md-12">
                     <label class="col-md-6">Autor</label>
                     <input type="text" class="form-control" name="cadastro_autor" placeholder="Autor">
                 </div>
 
 
-                <div class="form-group col-md-8 checkbox">
+                <div class="form-group col-md-12 checkbox">
                     <label  class="col-md-12"><h4><b>Selecione o gênero</b></h4></label>
                     <label>
                         <input type="checkbox" name="cadastro_genero[]" value="1">
                         Ação
                     </label>
                 </div>
-                <div class="form-group col-md-8 checkbox">
+                <div class="form-group col-md-12 checkbox">
                     <label>
                         <input type="checkbox" name="cadastro_genero[]" value="2">
                         Aventura
@@ -119,7 +120,7 @@
                         Romance
                     </label>
                 </div>
-                <div class= "form-group col-md-8">
+                <div class= "form-group col-md-12">
                     <label  class="col-md-8"><h4><b>Selecione o estudio de animação</b></h4></label>
                     <select class="form-control col-md-8" size="1" name="cadastro_editora">
                         <option></option>
@@ -134,7 +135,11 @@
                     <button type="submit" class="btn btn-primary">Cadastrar</button>
                 </div>
 
-            </form>
+                </form>
+            </div>
+
+
+
 
         </body>
     </head>

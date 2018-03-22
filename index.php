@@ -34,7 +34,7 @@ switch ($ocorrencia){
 
     </head>
     <body>
-        <div class="container-fluid col-md-3">
+        <div class="container clearfix col-md-3">
             <form action="action/validar.php" method="post" class="col-md-12">
                 <div class="row">
                     <div class="form-group">
