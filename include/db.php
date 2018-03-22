@@ -13,7 +13,7 @@ $db_host = 'localhost';
 $db_port = '8888';
 $db_user = 'root';
 $db_pwd = 'root';
-$db_table = 'aulas_renan';
+$db_table = 'aulas-renan';
 
 
 /********************************************************/
