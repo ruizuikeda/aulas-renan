@@ -2,12 +2,12 @@
 /********************************************************************/
 /*  Coletânia de funções associadas a cadastro                      */
 /********************************************************************/
-function phpLibCadastro_insert_animes_cadastrar_novo_anime($cadastro_titulo, $cadastro_ano, $cadastro_autor, $cadastro_genero, $cadastro_editora) {
+function phpLibCadastro_insert_animes_cadastrar_novo_anime($cadastro_titulo, $cadastro_ano, $cadastro_autor, $cadastro_editora) {
     $sql = "
         INSERT INTO animes
-        (titulo, ano, autor, genero, editora)
+        (titulo, ano, autor, editora)
         VALUES
-        ('$cadastro_titulo', '$cadastro_ano', '$cadastro_autor', '$cadastro_genero', '$cadastro_editora');
+        ('$cadastro_titulo', '$cadastro_ano', '$cadastro_autor', '$cadastro_editora');
     ";
 
     $result = mysql_query($sql);
@@ -18,4 +18,21 @@ function phpLibCadastro_insert_animes_cadastrar_novo_anime($cadastro_titulo, $ca
     $idAnime = mysql_insert_id();
 
     return $idAnime;
+}
+
+
+
+function phpLibCadastro_insert_animes_ref_genero_nova_ref($idAnime, $idGenero) {
+    $sql = "
+        INSERT INTO animes_ref_genero
+        (idAnime, idGenero)
+        VALUES
+        ('$idAnime', '$idGenero');
+    ";
+    $result = mysql_query($sql);
+
+    // validando se foi executado com sucesso
+    if(!$result) return false;
+
+    return mysql_insert_id();
 }

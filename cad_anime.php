@@ -91,32 +91,32 @@
                 <div class="form-group col-md-8 checkbox">
                     <label  class="col-md-12"><h4><b>Selecione o gênero</b></h4></label>
                     <label>
-                        <input type="checkbox" name="cadastro_genero[]" value="Ação">
+                        <input type="checkbox" name="cadastro_genero[]" value="1">
                         Ação
                     </label>
                 </div>
                 <div class="form-group col-md-8 checkbox">
                     <label>
-                        <input type="checkbox" name="cadastro_genero[]" value="Luta">
-                        Luta
+                        <input type="checkbox" name="cadastro_genero[]" value="2">
+                        Aventura
                     </label>
                 </div>
                 <div class="form-group col-md-8 checkbox">
                     <label>
-                        <input type="checkbox" name="cadastro_genero[]" value="Terror">
+                        <input type="checkbox" name="cadastro_genero[]" value="3">
+                        Hentai
+                    </label>
+                </div>
+                <div class="form-group col-md-8 checkbox">
+                    <label>
+                        <input type="checkbox" name="cadastro_genero[]" value="4">
                         Terror
                     </label>
                 </div>
                 <div class="form-group col-md-8 checkbox">
                     <label>
-                        <input type="checkbox" name="cadastro_genero[]" value="Sci-fi">
-                        Sci-fi
-                    </label>
-                </div>
-                <div class="form-group col-md-8 checkbox">
-                    <label>
-                        <input type="checkbox" name="cadastro_genero[]" value="Aventura">
-                        Aventura
+                        <input type="checkbox" name="cadastro_genero[]" value="5">
+                        Romance
                     </label>
                 </div>
                 <div class= "form-group col-md-8">

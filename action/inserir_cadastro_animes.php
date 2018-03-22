@@ -5,7 +5,7 @@
 require_once '../include/db.php';
 require_once '../include/phpLib_cadastro_animes.php';
 
-echo '<pre>'; print_r($_POST); exit;
+//echo '<pre>'; print_r($_POST); exit;
 
 /****************************************************************/
 /*  PARAMETROS DE ENTRADA                                       */
@@ -13,7 +13,7 @@ echo '<pre>'; print_r($_POST); exit;
 $cadastro_titulo        = (string)$_POST['cadastro_titulo'];
 $cadastro_ano           = (string)$_POST['cadastro_ano'];
 $cadastro_autor         = (string)$_POST['cadastro_autor'];
-$cadastro_genero        = (string)$_POST['cadastro_genero'];
+$cadastro_genero        = (array)$_POST['cadastro_genero'];
 $cadastro_editora       = (string)$_POST['cadastro_editora'];
 
 /****************************************************************/
@@ -26,6 +26,7 @@ $retorno_falha3         = '../cad_anime.php?msg=3';
 $retorno_falha4         = '../cad_anime.php?msg=4';
 $retorno_falha5         = '../cad_anime.php?msg=5';
 $retorno_falha6         = '../cad_anime.php?msg=6';
+$retorno_falha7         = '../cad_anime.php?msg=7';
 
 
 /****************************************************************/
@@ -35,7 +36,6 @@ $retorno_falha6         = '../cad_anime.php?msg=6';
 $cadastro_titulo       = trim($cadastro_titulo);
 $cadastro_ano          = trim($cadastro_ano);
 $cadastro_autor        = trim($cadastro_autor);
-$cadastro_genero       = trim($cadastro_genero);
 $cadastro_editora      = trim($cadastro_editora);
 
 
@@ -44,7 +44,6 @@ $cadastro_editora      = trim($cadastro_editora);
 $cadastro_titulo      = mysql_real_escape_string($cadastro_titulo);
 $cadastro_ano         = mysql_real_escape_string($cadastro_ano);
 $cadastro_autor       = mysql_real_escape_string($cadastro_autor);
-$cadastro_genero      = mysql_real_escape_string($cadastro_genero);
 $cadastro_editora     = mysql_real_escape_string($cadastro_editora);
 
 
@@ -61,7 +60,7 @@ if($cadastro_autor === '') {
     header('Location: '.$retorno_falha3);
     exit;
 }
-if($cadastro_genero === '') {
+if($cadastro_genero === array()) {
     header('Location: '.$retorno_falha4);
     exit;
 }
@@ -75,10 +74,22 @@ if($cadastro_editora === '') {
 /****************************************************************/
 /*  SCRIPT                                                      */
 /****************************************************************/
-$idAnime = phpLibCadastro_insert_animes_cadastrar_novo_anime($cadastro_titulo, $cadastro_ano, $cadastro_autor, $cadastro_genero, $cadastro_editora);
+$idAnime = phpLibCadastro_insert_animes_cadastrar_novo_anime($cadastro_titulo, $cadastro_ano, $cadastro_autor, $cadastro_editora);
 if(!$idAnime) {
     header('Location: '.$retorno_falha6);
     exit;
+}
+
+
+// percorrer a lista de generos que o anime tem
+foreach($cadastro_genero as $idGenero){
+    // eu tenho idAnime e idGenero
+    // vou inserir a ref genero
+    $idAnimeRefGenero = phpLibCadastro_insert_animes_ref_genero_nova_ref($idAnime, $idGenero);
+    if(!$idAnimeRefGenero) {
+        header('Location: '.$retorno_falha7);
+        exit;
+    }
 }
 
 
