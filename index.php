@@ -34,8 +34,8 @@ switch ($ocorrencia){
 
     </head>
     <body>
-        <div class="container clearfix col-md-3">
-            <form action="action/validar.php" method="post" class="col-md-12">
+        <div class="container">
+            <form action="action/validar.php" method="post" class="form-signin col-md-6">
                 <div class="row">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Login</label>
