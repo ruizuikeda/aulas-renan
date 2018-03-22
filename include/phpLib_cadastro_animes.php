@@ -9,6 +9,7 @@ function phpLibCadastro_insert_animes_cadastrar_novo_anime($cadastro_titulo, $ca
         VALUES
         ('$cadastro_titulo', '$cadastro_ano', '$cadastro_autor', '$cadastro_genero', '$cadastro_editora');
     ";
+
     $result = mysql_query($sql);
 
     // validando se foi executado com sucesso
