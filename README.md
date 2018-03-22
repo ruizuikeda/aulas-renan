@@ -27,5 +27,17 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `dataCriacao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`idUsuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-````
 
+
+CREATE TABLE IF NOT EXISTS `animes` (
+  `idAnime` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(512) NOT NULL,
+  `ano` varchar(512) NOT NULL,
+  `autor` varchar(512) NOT NULL,
+  `genero` varchar(512) NOT NULL,
+  `editora` varchar(512) NOT NULL,
+  `status` int(1) NOT NULL DEFAULT '1',
+  `dataCriacao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idAnime`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+````
