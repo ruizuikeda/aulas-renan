@@ -34,7 +34,6 @@ CREATE TABLE IF NOT EXISTS `animes` (
   `titulo` varchar(512) NOT NULL,
   `ano` varchar(512) NOT NULL,
   `autor` varchar(512) NOT NULL,
-  `genero` varchar(512) NOT NULL,
   `editora` varchar(512) NOT NULL,
   `status` int(1) NOT NULL DEFAULT '1',
   `dataCriacao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
