@@ -83,7 +83,7 @@
 
                     <div class="form-group col-md-5">
                         <label class="col-md-6">Data de Nascimento</label>
-                        <input type="text" class="form-control" name="cadastro_dtNascimento" placeholder="Digite a data de Nascimento">
+                        <input type="date" class="form-control" name="cadastro_dtNascimento" placeholder="Digite a data de Nascimento">
                     </div>
 
                     <div class= "form-group col-md-5">

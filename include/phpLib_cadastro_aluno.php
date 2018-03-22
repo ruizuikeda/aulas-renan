@@ -1,13 +1,13 @@
 <?php
 /********************************************************************/
-/*  Coletânia de funções associadas a cadastro dos animes           */
+/*  Coletânia de funções associadas a cadastro dos alunos           */
 /********************************************************************/
-function phpLibCadastro_insert_alunos_cadastrar_novo_aluno($cadastro_nome, $cadastro_rg, $cadastro_cpf, $cadastro_dataNascimento, $cadastro_sexo, $cadastro_curso, $cadastro_turno) {
+function phpLibCadastro_insert_alunos_cadastrar_novo_aluno($cadastro_nome, $cadastro_rg, $cadastro_cpf, $cadastro_dtNascimento, $cadastro_sexo, $cadastro_curso, $cadastro_turno) {
     $sql = "
         INSERT INTO alunos
-        (nome, rg, cpf, dataNascimento, sexo, curso, turno, periodo)
+        (nome, rg, cpf, dataNascimento, sexo, curso, turno)
         VALUES
-        ('$cadastro_nome', '$cadastro_rg', '$cadastro_cpf', '$cadastro_dataNascimento', '$cadastro_sexo', '$cadastro_curso', '$cadastro_turno');
+        ('$cadastro_nome', '$cadastro_rg', '$cadastro_cpf', '$cadastro_dtNascimento', '$cadastro_sexo', '$cadastro_curso', '$cadastro_turno');
     ";
 
     $result = mysql_query($sql);

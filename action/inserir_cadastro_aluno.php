@@ -13,10 +13,13 @@ require_once '../include/phpLib_cadastro_aluno.php';
 $cadastro_nome             = (string)$_POST['cadastro_nome'];
 $cadastro_rg               = (string)$_POST['cadastro_rg'];
 $cadastro_cpf              = (string)$_POST['cadastro_cpf'];
-$cadastro_dataNascimento   = (string)$_POST['cadastro_dataNascimento'];
+$cadastro_dtNascimento     = $_POST['cadastro_dtNascimento'];
 $cadastro_sexo             = (string)$_POST['cadastro_sexo'];
 $cadastro_curso            = (string)$_POST['cadastro_curso'];
 $cadastro_turno            = (string)$_POST['cadastro_turno'];
+
+//echo '<pre>'; print_r($_POST); exit;
+
 
 
 /****************************************************************/
@@ -30,6 +33,7 @@ $retorno_falha4         = '../cad_alunos.php?msg=4';
 $retorno_falha5         = '../cad_alunos.php?msg=5';
 $retorno_falha6         = '../cad_alunos.php?msg=6';
 $retorno_falha7         = '../cad_alunos.php?msg=7';
+$retorno_falha8         = '../cad_alunos.php?msg=8';
 
 
 /****************************************************************/
@@ -39,7 +43,6 @@ $retorno_falha7         = '../cad_alunos.php?msg=7';
 $cadastro_nome                = trim($cadastro_nome);
 $cadastro_rg                  = trim($cadastro_rg);
 $cadastro_cpf                 = trim($cadastro_cpf);
-$cadastro_dataNascimento      = trim($cadastro_dataNascimento);
 $cadastro_sexo                = trim($cadastro_sexo);
 $cadastro_curso               = trim($cadastro_curso);
 $cadastro_turno               = trim($cadastro_turno);
@@ -48,31 +51,38 @@ $cadastro_turno               = trim($cadastro_turno);
 $cadastro_nome                = mysql_real_escape_string($cadastro_nome);
 $cadastro_rg                  = mysql_real_escape_string($cadastro_rg);
 $cadastro_cpf                 = mysql_real_escape_string($cadastro_cpf);
-$cadastro_dataNascimento      = mysql_real_escape_string($cadastro_dataNascimento);
 $cadastro_sexo                = mysql_real_escape_string($cadastro_sexo);
 $cadastro_curso               = mysql_real_escape_string($cadastro_curso);
 $cadastro_turno               = mysql_real_escape_string($cadastro_turno);
 
 
 // vendo se veio tudo o que obrigatoriamente eu gostaria
-if($cadastro_titulo === '') {
+if($cadastro_nome === '') {
     header('Location: '.$retorno_falha1);
     exit;
 }
-if($cadastro_ano === '') {
+if($cadastro_rg === '') {
     header('Location: '.$retorno_falha2);
     exit;
 }
-if($cadastro_autor === '') {
+if($cadastro_cpf === '') {
     header('Location: '.$retorno_falha3);
     exit;
 }
-if($cadastro_genero === array()) {
+if($cadastro_dtNascimento === '') {
     header('Location: '.$retorno_falha4);
     exit;
 }
-if($cadastro_editora === '') {
+if($cadastro_sexo === '') {
     header('Location: '.$retorno_falha5);
+    exit;
+}
+if($cadastro_curso === '') {
+    header('Location: '.$retorno_falha6);
+    exit;
+}
+if($cadastro_turno === '') {
+    header('Location: '.$retorno_falha7);
     exit;
 }
 
@@ -81,9 +91,9 @@ if($cadastro_editora === '') {
 /****************************************************************/
 /*  SCRIPT                                                      */
 /****************************************************************/
-$idAnime = phpLibCadastro_insert_alunos_cadastrar_novo_aluno($cadastro_titulo, $cadastro_ano, $cadastro_autor, $cadastro_editora);
-if(!$idAnime) {
-    header('Location: '.$retorno_falha6);
+$idAluno = phpLibCadastro_insert_alunos_cadastrar_novo_aluno($cadastro_nome, $cadastro_rg, $cadastro_cpf, $cadastro_dtNascimento, $cadastro_sexo, $cadastro_curso, $cadastro_turno);
+if(!$idAluno) {
+    header('Location: '.$retorno_falha8);
     exit;
 }
 
