@@ -20,7 +20,7 @@
                 <div class="cover-container">
                     <div class="masthead clearfix">
                         <div class="inner">
-                            <h3 class="masthead-brand">Prova</h3>
+                            <h3 class="masthead-brand">Cadastre-se</h3>
                             <nav>
                                 <ul class="nav masthead-nav">
                                     <li><a href="index_prova.php">Home</a></li>
@@ -33,7 +33,7 @@
                     <div class="inner cover">
                         <h1 class="cover-heading">Primeiro, preencha com seus dados: </h1>
                     </div>
-                        <form action="questionario.php" method="post" class="form-vertical col-md-12">
+                    <form action="action/inserir_cadastro_participante.php" method="post" class="form-vertical col-md-12">
                             <div class="form-group col-md-4">
                                 <label class="col-md-12">Nome Completo</label>
                                 <input type="text" class="form-control" name="cadastro_nome" placeholder="Digite o Nome">
