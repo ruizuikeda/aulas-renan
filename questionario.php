@@ -23,8 +23,9 @@ foreach($ref_perguntas as $ref){
     // definições das perguntas
     $idPergunta = $ref['idPergunta'];
     $pergunta   = phpLibQuestionarios_get_pergunta($idPergunta);
-    //$perguntas[] = $pergunta;
+    $perguntas[] = $pergunta;
     
+
     // em busca das alternativas de cada pergunta
     $ref_alternativas = phpLibQuestionarios_getAll_perguntas_ref_alternativas($idPergunta);
     $alternativas = array();
@@ -35,8 +36,8 @@ foreach($ref_perguntas as $ref){
     }
     
     $pergunta['alternativas'] = $alternativas;
-    
     $perguntas[] = $pergunta;
+//    echo '<pre>'; print_r($alternativas); exit;
 }
 
 ?>
@@ -75,11 +76,19 @@ foreach($ref_perguntas as $ref){
                     
                     <!-- laço das perguntas -->
                     <div class="inner cover">
-                        <h1 class="cover-heading">Campo para inserir a pergunta</h1>
+                        <h1 class="cover-heading">
+                           <?php
+                            echo $pergunta['pergunta'];
+
+
+                            ?></h1>
                         
                         <!-- laço percorrendo as alternativas -->
                         <p class="lead">Aqui será o espaço para o radio box para as repostas</p>
+                        <p class="lead">Aqui será o espaço para o radio box para as repostas</p>
+                        <p class="lead">Aqui será o espaço para o radio box para as repostas</p>
                         <hr>
+
                     </div>
                     
                    
