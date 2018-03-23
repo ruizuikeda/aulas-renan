@@ -1,6 +1,43 @@
 <?php
-$cadastro_nome          = (string)$_POST['cadastro_nome'];
+require_once 'include/db.php';
+require_once 'include/phpLib_questionarios.php';
 
+session_start();
+$cadastro_nome          = (string)$_SESSION['cadastro_nome'];
+
+// pegar o questionario
+$questionarios = phpLibQuestionarios_getAll_questionarios();
+
+if(!$questionarios) {
+    echo 'nao tem nenhum questionário cadastrado';
+    exit;
+}
+
+$questionario   = $questionarios[0];
+// buscar as perguntas
+$idQuestionario = $questionario['idQuestionario'];
+$ref_perguntas      = phpLibQuestionarios_getAll_perguntas_de_um_determinado_questionario($idQuestionario);
+
+$perguntas = array();
+foreach($ref_perguntas as $ref){
+    // definições das perguntas
+    $idPergunta = $ref['idPergunta'];
+    $pergunta   = phpLibQuestionarios_get_pergunta($idPergunta);
+    //$perguntas[] = $pergunta;
+    
+    // em busca das alternativas de cada pergunta
+    $ref_alternativas = phpLibQuestionarios_getAll_perguntas_ref_alternativas($idPergunta);
+    $alternativas = array();
+    foreach($ref_alternativas as $refAlternativa){
+        $idAlternativa = $refAlternativa['idAlternativa'];
+        $altenativa     = phpLibQuestionarios_get_alternativa($idAlternativa);
+        $alternativas[] = $altenativa;
+    }
+    
+    $pergunta['alternativas'] = $alternativas;
+    
+    $perguntas[] = $pergunta;
+}
 
 ?>
 <!DOCTYPE html>
@@ -34,10 +71,18 @@ $cadastro_nome          = (string)$_POST['cadastro_nome'];
                             </nav>
                         </div>
                     </div>
+                    <h1 class="text-center text-primary"><?php echo $questionario['nomeQuestionario']; ?></h1>
+                    
+                    <!-- laço das perguntas -->
                     <div class="inner cover">
                         <h1 class="cover-heading">Campo para inserir a pergunta</h1>
+                        
+                        <!-- laço percorrendo as alternativas -->
                         <p class="lead">Aqui será o espaço para o radio box para as repostas</p>
+                        <hr>
                     </div>
+                    
+                   
                     <div class="mastfoot">
                         <div class="inner">
                             <p>Feito Por:  <a href="http://getbootstrap.com">Renan Nóbrega</a>, by <a href="https://twitter.com/mdo">Graphis Design</a>.</p>
