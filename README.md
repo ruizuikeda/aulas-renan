@@ -62,25 +62,27 @@ CREATE TABLE IF NOT EXISTS `genero` (
 
 
 
-CREATE TABLE `perguntas` (
+CREATE TABLE IF NOT EXISTS `perguntas` (
   `idPergunta` int(11) NOT NULL AUTO_INCREMENT,
   `status` int(11) NOT NULL DEFAULT '1',
   `dataCriacao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `idCriador` int(11) DEFAULT NULL,
   `pergunta` varchar(1024) NOT NULL,
-  `respostaCorreta` int(11) NOT NULL
+  `respostaCorreta` int(11) NOT NULL,
+  PRIMARY KEY (`idPergunta`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 
-CREATE TABLE `participantes` (
+CREATE TABLE IF NOT EXISTS `participantes` (
   `idParticipante` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(512) NOT NULL,
   `setor` varchar(512) NOT NULL,
   `cargo` varchar(512) NOT NULL,
   `status` int(11) NOT NULL DEFAULT '1',
   `dataCriacao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `prova` int(11) DEFAULT NULL
+  `prova` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idParticipante`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 ````

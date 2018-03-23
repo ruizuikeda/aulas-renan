@@ -4,7 +4,7 @@
 /********************************************************************/
 function phpLibCadastro_insert_participantes_cadastrar_novo_participante($cadastro_nome, $cadastro_setor, $cadastro_cargo) {
     $sql = "
-        INSERT INTO alunos
+        INSERT INTO participantes
         (nome, setor, cargo)
         VALUES
         ('$cadastro_nome', '$cadastro_setor', '$cadastro_cargo');
@@ -18,3 +18,4 @@ function phpLibCadastro_insert_participantes_cadastrar_novo_participante($cadast
     $idParticipante = mysql_insert_id();
 
     return $idParticipante;
+}
