@@ -33,7 +33,7 @@
                     <div class="inner cover">
                         <h1 class="cover-heading">Primeiro, preencha com seus dados: </h1>
                     </div>
-                        <form action="action/inserir_cadastro_aluno.php" method="post" class="form-vertical col-md-12">
+                        <form action="questionario.php" method="post" class="form-vertical col-md-12">
                             <div class="form-group col-md-4">
                                 <label class="col-md-12">Nome Completo</label>
                                 <input type="text" class="form-control" name="cadastro_nome" placeholder="Digite o Nome">
