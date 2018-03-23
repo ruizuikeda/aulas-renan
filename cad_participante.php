@@ -52,6 +52,11 @@
                                 <button type="submit" class="btn btn-primary btn-lg" align="center">Cadastrar</button>
                             </div>
                         </form>
+                        <div class="mastfoot">
+                            <div class="inner">
+                                <p>Feito Por:  <a href="http://getbootstrap.com">Renan Nóbrega</a>, by <a href="https://twitter.com/mdo">Graphis Design</a>.</p>
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>

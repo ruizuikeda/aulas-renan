@@ -38,9 +38,13 @@ $cadastro_nome          = (string)$_POST['cadastro_nome'];
                         <h1 class="cover-heading">Parabéns! Você acertou: </h1>
                         <p class="lead">Aqui era mostrar quantas perguntas ele acertou</p>
                     </div>
+                    <div class="mastfoot">
+                        <div class="inner">
+                            <p>Feito Por:  <a href="http://getbootstrap.com">Renan Nóbrega</a>, by <a href="https://twitter.com/mdo">Graphis Design</a>.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
     </body>
 </html>

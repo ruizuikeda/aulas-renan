@@ -38,7 +38,11 @@ $cadastro_nome          = (string)$_POST['cadastro_nome'];
                         <h1 class="cover-heading">Campo para inserir a pergunta</h1>
                         <p class="lead">Aqui será o espaço para o radio box para as repostas</p>
                     </div>
-
+                    <div class="mastfoot">
+                        <div class="inner">
+                            <p>Nome do gay aqui do lado direito>> <a href="http://getbootstrap.com">Vinicius Barbosa</a>, by <a href="https://twitter.com/mdo">:)</a>.</p>
+                        </div>
+                    </div>
 
                 </div>
             </div>
