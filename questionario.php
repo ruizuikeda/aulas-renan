@@ -40,7 +40,7 @@ $cadastro_nome          = (string)$_POST['cadastro_nome'];
                     </div>
                     <div class="mastfoot">
                         <div class="inner">
-                            <p>Nome do gay aqui do lado direito>> <a href="http://getbootstrap.com">Vinicius Barbosa</a>, by <a href="https://twitter.com/mdo">:)</a>.</p>
+                            <p>Feito Por:  <a href="http://getbootstrap.com">Renan Nóbrega</a>, by <a href="https://twitter.com/mdo">Graphis Design</a>.</p>
                         </div>
                     </div>
 

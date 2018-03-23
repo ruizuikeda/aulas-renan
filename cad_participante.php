@@ -41,12 +41,12 @@
 
                             <div class="form-group col-md-4">
                                 <label class="col-md-12">Setor</label>
-                                <input type="text" class="form-control" name="cadastro_rg" placeholder="Digite seu RG">
+                                <input type="text" class="form-control" name="cadastro_setor" placeholder="Digite seu setor">
                             </div>
 
                             <div class="form-group col-md-4">
                                 <label class="col-md-12">Cargo</label>
-                                <input type="text" class="form-control" name="cadastro_cpf" placeholder="Digite seu CPF">
+                                <input type="text" class="form-control" name="cadastro_cargo" placeholder="Digite seu cargo">
                             </div>
                             <div class="form-group col-md-12">
                                 <button type="submit" class="btn btn-primary btn-lg" align="center">Cadastrar</button>

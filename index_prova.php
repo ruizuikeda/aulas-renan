@@ -34,13 +34,13 @@
                         <h1 class="cover-heading">Prova Teórica</h1>
                         <p class="lead">Olá! Você está pronto para começar o teste com questões relacionadas a matéria dada? Se sim, clica no botão abaixo e boa sorte</p>
                         <p class="lead">
-                            <a href="#" class="btn btn-lg btn-default">Iniciar Teste</a>
+                            <a href="cad_participante.php" class="btn btn-lg btn-default">Iniciar Teste</a>
                         </p>
                     </div>
 
                     <div class="mastfoot">
                         <div class="inner">
-                            <p>Nome do gay aqui do lado direito>> <a href="http://getbootstrap.com">Vinicius Barbosa</a>, by <a href="https://twitter.com/mdo">:)</a>.</p>
+                            <p>Feito Por:  <a href="http://getbootstrap.com">Renan Nóbrega</a>, by <a href="https://twitter.com/mdo">Graphis Design</a>.</p>
                         </div>
                     </div>
                 </div>
