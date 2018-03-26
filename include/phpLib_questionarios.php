@@ -110,12 +110,3 @@ function phpLib_getAll_alternativa() {
     } else return array();
     return $r;
 }
-
-//function phpLib_escolhe_alternativa(){
-//    $alter = phpLib_getAll_alternativa();
-//    $per_ref_alt =  phpLibQuestionarios_getAll_perguntas_ref_alternativas();
-//    for ($alter[]['idAlternativa'])
-//
-//
-//
-//}
