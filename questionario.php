@@ -37,7 +37,8 @@ foreach($ref_perguntas as $ref){
     
     $pergunta['alternativas'] = $alternativas;
     $perguntas[] = $pergunta;
-//    echo '<pre>'; print_r($alternativas); exit;
+    echo '<pre>'; print_r($alternativas);
+    exit;
 }
 
 ?>
@@ -46,13 +47,10 @@ foreach($ref_perguntas as $ref){
     <head>
         <meta charset="utf-8">
         <title>Questionário</title>
-        <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
-        <!-- Custom styles for this template -->
         <link href="cover.css" rel="stylesheet">
     </head>
 
@@ -76,31 +74,33 @@ foreach($ref_perguntas as $ref){
                     
                     <!-- laço das perguntas -->
                     <div class="inner cover">
-                        <h1 class="cover-heading">
+                        <h2 class="cover-heading">
                            <?php
-                            echo $pergunta['pergunta'];
-
-
-                            ?></h1>
+                            for ($p=0; $p <=2; $p++){
+                                echo $perguntas[$p]['pergunta'];
+//                                <!-- laço percorrendo as alternativas -->
+                               for ($i=0; $i <=2; $i++) {
+                                echo '<div class="radio">
+                                        <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">';
+                                            echo $alternativas[$i]['textoAlternativa'];
+                                        '</label>
+                                      <hr>
+                                      </div>';
+                                   }
+                            }
+                            ?>
+                        </h2>
                         
-                        <!-- laço percorrendo as alternativas -->
-                        <p class="lead">Aqui será o espaço para o radio box para as repostas</p>
-                        <p class="lead">Aqui será o espaço para o radio box para as repostas</p>
-                        <p class="lead">Aqui será o espaço para o radio box para as repostas</p>
-                        <hr>
 
                     </div>
-                    
-                   
                     <div class="mastfoot">
                         <div class="inner">
                             <p>Feito Por:  <a href="http://getbootstrap.com">Renan Nóbrega</a>, by <a href="https://twitter.com/mdo">Graphis Design</a>.</p>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
-
     </body>
 </html>
