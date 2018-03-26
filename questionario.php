@@ -39,8 +39,8 @@ foreach($ref_perguntas as $ref){
     $perguntas = phpLib_getAll_perguntas();
     $alternativas = phpLib_getAll_alternativa();
 
-    echo '<pre>'; print_r ($alternativas);
-    exit;
+//    echo '<pre>'; print_r ($alternativas);
+//    exit;
 }
 
 ?>
@@ -93,8 +93,6 @@ foreach($ref_perguntas as $ref){
                             }
                             ?>
                         </h2>
-                        
-
                     </div>
                     <div class="mastfoot">
                         <div class="inner">

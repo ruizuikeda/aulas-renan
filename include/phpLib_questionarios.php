@@ -111,12 +111,11 @@ function phpLib_getAll_alternativa() {
     return $r;
 }
 
-function phpLib_escolhe_alternativa(){
-    $alternativas = phpLib_getAll_alternativa();
-
-    for ($i=0; $i <=8; $i++)
-        $ref_alternativas = phpLibQuestionarios_getAll_perguntas_ref_alternativas();
-        $cont = $ref_alternativas[$i]['idPergunta'];
-
-
-}
+//function phpLib_escolhe_alternativa(){
+//    $alter = phpLib_getAll_alternativa();
+//    $per_ref_alt =  phpLibQuestionarios_getAll_perguntas_ref_alternativas();
+//    for ($alter[]['idAlternativa'])
+//
+//
+//
+//}
