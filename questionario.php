@@ -37,8 +37,8 @@ foreach($ref_perguntas as $ref){
     
     $pergunta['alternativas'] = $alternativas;
     $perguntas[] = $pergunta;
-    echo '<pre>'; print_r($alternativas);
-    exit;
+//    echo '<pre>'; print_r ($perguntas);
+//    exit;
 }
 
 ?>
