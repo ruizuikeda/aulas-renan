@@ -36,9 +36,11 @@ foreach($ref_perguntas as $ref){
     }
     
     $pergunta['alternativas'] = $alternativas;
-    $perguntas[] = $pergunta;
-//    echo '<pre>'; print_r ($perguntas);
-//    exit;
+    $perguntas = phpLib_getAll_perguntas();
+    $alternativas = phpLib_getAll_alternativa();
+
+    echo '<pre>'; print_r ($alternativas);
+    exit;
 }
 
 ?>

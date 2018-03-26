@@ -46,6 +46,22 @@ function phpLibQuestionarios_get_pergunta($idPergunta) {
     } else return array();
     return $r[0];
 }
+//função nova para pegar todas as perguntas
+function phpLib_getAll_perguntas() {
+    $sql = "
+        SELECT *
+        FROM perguntas
+        WHERE status = 1
+    ";
+    $result = mysql_query($sql);
+    if(!$result) return array();
+    if(mysql_num_rows($result)>0) {
+        while($row = mysql_fetch_assoc($result)) {
+            $r[] = $row;
+        }
+    } else return array();
+    return $r;
+}
 
 function phpLibQuestionarios_getAll_perguntas_ref_alternativas($idPergunta) {
     $sql = "
@@ -77,4 +93,30 @@ function phpLibQuestionarios_get_alternativa($idAlternativa) {
         }
     } else return array();
     return $r[0];
+}
+
+function phpLib_getAll_alternativa() {
+    $sql = "
+        SELECT *
+        FROM alternativas
+        WHERE status = 1
+    ";
+    $result = mysql_query($sql);
+    if(!$result) return array();
+    if(mysql_num_rows($result)>0) {
+        while($row = mysql_fetch_assoc($result)) {
+            $r[] = $row;
+        }
+    } else return array();
+    return $r;
+}
+
+function phpLib_escolhe_alternativa(){
+    $alternativas = phpLib_getAll_alternativa();
+
+    for ($i=0; $i <=8; $i++)
+        $ref_alternativas = phpLibQuestionarios_getAll_perguntas_ref_alternativas();
+        $cont = $ref_alternativas[$i]['idPergunta'];
+
+
 }
