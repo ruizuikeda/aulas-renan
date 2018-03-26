@@ -8,13 +8,13 @@ require_once '../include/db.php';
 /********************************************************/
 /* PARAMETROS DE ENTRADA                                */
 /********************************************************/
-$usuario_nome = $POST["cadastro_nome"];
-$usuario_sobrenome = $POST["cadastro_sobrenome"];
+$usuario_nome = $_POST["cadastro_nome"];
+$usuario_sobrenome = $_POST["cadastro_sobrenome"];
 $usuario_login = $_POST["login"];
 $usuario_senha = $_POST["senha"];
-$usuario_cpf = $POST["cadastro_cpf"];
-$usuario_endereco = $POST["cadastro_endereco"];
-$usuario_celular = $POST["cadastro_celular"];
+$usuario_cpf = $_POST["cadastro_cpf"];
+$usuario_endereco = $_POST["cadastro_endereco"];
+$usuario_celular = $_POST["cadastro_celular"];
 
 
 /********************************************************/
