@@ -85,4 +85,40 @@ CREATE TABLE IF NOT EXISTS `participantes` (
   PRIMARY KEY (`idParticipante`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
+
+-- Estrutura da tabela `provas_respondidas`
+--
+
+CREATE TABLE `provas_respondidas` (
+  `idProva` int(11) NOT NULL,
+  `nome` varchar(512) NOT NULL,
+  `respostasCorretas` int(11) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '1',
+  `dataCriacao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `provas_respondidas`
+--
+ALTER TABLE `provas_respondidas`
+  ADD PRIMARY KEY (`idProva`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `provas_respondidas`
+--
+ALTER TABLE `provas_respondidas`
+  MODIFY `idProva` int(11) NOT NULL AUTO_INCREMENT;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
 ````
