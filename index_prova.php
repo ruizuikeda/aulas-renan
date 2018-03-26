@@ -25,7 +25,7 @@
                                 <ul class="nav masthead-nav">
                                     <li class="active"><a href="#">Home</a></li>
                                     <li><a href="#">Sobre</a></li>
-                                    <li><a href="#">Contatos</a></li>
+                                    <li><a href="#">Acesso ADM</a></li>
                                 </ul>
                             </nav>
                         </div>
