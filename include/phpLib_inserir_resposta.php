@@ -1,18 +1,15 @@
 <?php
+require_once '../include/phpLib_questionario.php';
+
 /********************************************************************/
 /*  Coletânia de funções associadas a prova                         */
 /********************************************************************/
 $alternativasSelecionadas      = $_POST;
+$resposta = phpLib_getAll_perguntas();
+$respostas = $resposta[0];
+$idRespostas = $respostas['respostaCorreta'];
 
-
-function phpLibVerificar_respostas_certas($alternativasSelecionadas){
-    $resposta1 = $alternativasSelecionadas[0];
-    $resposta2 = $alternativasSelecionadas[1];
-    $resposta3 = $alternativasSelecionadas[2]
-
-
-}
-
+echo '<pre>'; print_r($idRespostas);exit;
 
 
 
@@ -32,3 +29,4 @@ function phpLibCadastro_insert_prova_inserir_respostas($cadastro_nome, $resposta
 
     return $idProva;
 }
+?>
