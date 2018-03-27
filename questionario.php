@@ -29,7 +29,7 @@ foreach($ref_perguntas as $ref){
     $alternativas = array();
 
     foreach($ref_alternativas as $refAlternativa){
-        $idAlternativa = $refAlternativa['idAlternativa'];
+        $idAlternativa  = $refAlternativa['idAlternativa'];
         $altenativa     = phpLibQuestionarios_get_alternativa($idAlternativa);
         $alternativas[] = $altenativa;
     }
@@ -39,8 +39,13 @@ foreach($ref_perguntas as $ref){
 
     // concatenando a pergunta corrente no array de perguntas final
     $perguntas[] = $pergunta;
+
 }
-//echo '<pre>'; print_r($perguntas);exit;
+$procura_perguntas = phpLib_getAll_perguntas();
+
+//    echo '<pre>'; print_r($procura_perguntas);exit;
+
+
 
 ?>
 <!DOCTYPE html>
@@ -94,8 +99,6 @@ foreach($ref_perguntas as $ref){
                         </div>
                         <hr>
                         <?php } ?>
-
-
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="col-xs-offset-4 col-xs-4">
@@ -104,12 +107,6 @@ foreach($ref_perguntas as $ref){
                             </div>
                         </div>
                     </form>
-
-
-
-
-
-
                     <div class="mastfoot">
                         <div class="inner">
                             <p>Feito Por:  <a href="http://getbootstrap.com">Renan Nóbrega</a>, by <a href="https://twitter.com/mdo">Graphis Design</a>.</p>

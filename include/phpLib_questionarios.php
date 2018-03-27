@@ -1,4 +1,9 @@
 <?php
+session_start();
+$cadastro_nome          = (string)$_SESSION['cadastro_nome'];
+
+
+
 function phpLibQuestionarios_getAll_questionarios() {
     $sql = "
         SELECT *
@@ -63,6 +68,25 @@ function phpLib_getAll_perguntas() {
     return $r;
 }
 
+//Criado no intuito de trazer toda a tabela
+function phpLibQuestionarios_getAll_perguntas_ref_alternativa() {
+    $sql = "
+        SELECT *
+        FROM perguntas_ref_alternativas
+        WHERE status = 1
+    ";
+    $result = mysql_query($sql);
+    if(!$result) return array();
+    if(mysql_num_rows($result)>0) {
+        while($row = mysql_fetch_assoc($result)) {
+            $r[] = $row;
+        }
+    } else return array();
+    return $r;
+}
+
+
+
 function phpLibQuestionarios_getAll_perguntas_ref_alternativas($idPergunta) {
     $sql = "
         SELECT *
@@ -110,3 +134,18 @@ function phpLib_getAll_alternativa() {
     } else return array();
     return $r;
 }
+
+
+function phpLib_update_participantes_atualiza_nota_do_participante($nota){
+    $sql = "
+        UPDATE participantes
+        SET notaProva = '$nota'
+        WHERE nome = '$cadastro_nome'
+    ";
+
+        mysql_close($sql);
+}
+
+
+
+?>
