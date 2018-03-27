@@ -1,5 +1,13 @@
 <?php
-$cadastro_nome          = (string)$_POST['cadastro_nome'];
+session_start();
+require_once 'include/db.php';
+require_once 'include/phpLib_questionarios.php';
+$cadastro_nome          = (string)$_SESSION['cadastro_nome'];
+
+
+
+
+
 
 
 ?>
@@ -24,7 +32,7 @@ $cadastro_nome          = (string)$_POST['cadastro_nome'];
                 <div class="cover-container">
                     <div class="masthead clearfix">
                         <div class="inner">
-                            <h3 class="masthead-brand"><?php echo 'Olá ' . $cadastro_nome?></h3>
+                            <h3 class="masthead-brand"></h3>
                             <nav>
                                 <ul class="nav masthead-nav">
                                     <li><a href="index_prova.php">Home</a></li>
