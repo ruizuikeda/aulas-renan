@@ -1,6 +1,4 @@
 <?php
-session_start();
-$cadastro_nome          = (string)$_SESSION['cadastro_nome'];
 
 
 
@@ -136,16 +134,37 @@ function phpLib_getAll_alternativa() {
 }
 
 
-function phpLib_update_participantes_atualiza_nota_do_participante($nota){
+function phpLib_update_participantes_atualiza_nota_do_participante($nota,$idParticipante){
     $sql = "
         UPDATE participantes
         SET notaProva = '$nota'
-        WHERE nome = '$cadastro_nome'
+        WHERE idParticipante = '$idParticipante'
     ";
+    $result = mysql_query($sql);
 
-        mysql_close($sql);
+    // validando se foi executado com sucesso
+    if(!$result) return false;
+
+    return true;
 }
 
+function phpLibCadastro_insert_participantes_cadastrar_novo_participante($cadastro_nome, $cadastro_setor, $cadastro_cargo) {
+    $sql = "
+        INSERT INTO participantes
+        (nome, setor, cargo)
+        VALUES
+        ('$cadastro_nome', '$cadastro_setor', '$cadastro_cargo');
+    ";
+    $result = mysql_query($sql);
 
+    // validando se foi executado com sucesso
+    if(!$result) return false;
+
+    $idParticipante = mysql_insert_id();
+
+    return $idParticipante;
+}
 
 ?>
+
+

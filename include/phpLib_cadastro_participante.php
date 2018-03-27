@@ -19,3 +19,5 @@ function phpLibCadastro_insert_participantes_cadastrar_novo_participante($cadast
 
     return $idParticipante;
 }
+
+?>

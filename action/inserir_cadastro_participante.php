@@ -67,6 +67,7 @@ if(!$idParticipante) {
 
 
 $_SESSION['cadastro_nome']        = $_POST['cadastro_nome'];
+$_SESSION['idParticipante']       = $idParticipante;
 /****************************************************************/
 /*  FINALIZAR                                                   */
 /****************************************************************/
