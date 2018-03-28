@@ -13,15 +13,10 @@
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.css">
 
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.js"></script>
-
-        <!-- Latest compiled and minified Locales -->
-        <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/locale/bootstrap-table-zh-CN.min.js"></script>
-
         <link rel="stylesheet" href="bootstrap.min.css">
         <link rel="stylesheet" href="bootstrap-table.css">
         <title>Pesquisa de Alunos</title>
+        </head>
         <body>
             <nav class="navbar navbar-inverse navbar-fixed-top">
                 <div class="container">
@@ -53,48 +48,52 @@
                             </li>
                         </ul>
                     </div>
-                    <script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
-                    <script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'></script>
-                    <script type="text/javascrip">
-                        $('.dropdown-toggle').click(function(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
 
-                        return false;
-                        });
-                        $('.dropdown-menu').click(function(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-
-                        return false;
-                        });
-                        $(document).ready(function () {
-                        $('.dropdown-toggle').dropdown();
-                        });
-                    </script>
                 </div>
             </nav>
             <div class="container theme-showcase" role="main">
                 <div class="jumbotron" style="background-color: #e3f2fd;">
                     <h1>Alunos já cadastrados</h1>
                 </div>
-
-                <table data-toggle="table" data-url="action/pesquisar_alunos.php">
-                    <thead>
+                <div class="table-responsive">
+                    <table id="table"
+                           data-toggle="table"
+                           data-url="action/pesquisar_alunos.php"
+                           data-show-pagination-switch="true"
+                           data-show-toggle="true"
+                           data-show-columns="true"
+                           data-pagination="true"
+                           data-search="true"
+                           data-sortable="true"
+                           data-content-type="application/json"
+                           data-data-type="json"
+                           data-filter-control="false">
+                        <thead>
                         <tr>
-                            <th data-field="id">Item ID</th>
-                            <th data-field="nome">Item Name</th>
-                            <th data-field="RG">Item Price</th>
-                            <th data-field="CPF">Item Price</th>
-                            <th data-field="dataNascimento">Item Price</th>
-                            <th data-field="sexo">Item Price</th>
-                            <th data-field="curso">Item Price</th>
-                            <th data-field="turno">Item Price</th>
+                            <th data-field="id"             data-filter-control="input" data-align="center" data-sortable="true">ID</th>
+                            <th data-field="nome"           data-filter-control="input" data-align="center" data-sortable="true">Nome</th>
+                            <th data-field="RG"             data-filter-control="input" data-align="center" data-sortable="true">RG</th>
+                            <th data-field="CPF"            data-filter-control="input" data-align="center" data-sortable="true">CPF</th>
+                            <th data-field="dataNascimento" data-filter-control="input" data-align="center" data-sortable="true">Data de Nascimento</th>
+                            <th data-field="sexo"           data-filter-control="input" data-align="center" data-sortable="true">Sexo</th>
+                            <th data-field="curso"          data-filter-control="input" data-align="center" data-sortable="true">Curso</th>
+                            <th data-field="turno"          data-filter-control="input" data-align="center" data-sortable="true">Turno</th>
+                            <th data-field="acoes"          data-filter-control="input" data-align="center" data-sortable="true">Ações</th>
                         </tr>
-                    </thead>
-                </table>
-
+                        </thead>
+                    </table>
+                </div>
             </div>
+            <script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
+            <script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'></script>
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.js"></script>
+
+            <!-- Latest compiled and minified Locales -->
+            <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/locale/bootstrap-table-pt-BR.min.js"></script>
+            <script type="text/javascrip">
+
+            </script>
         </body>
-    </head>
+
 </html>

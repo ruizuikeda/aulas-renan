@@ -1,3 +1,7 @@
+<?php
+$idAluno = $_GET["idAluno"];
+
+?>
 <html lang="pt">
     <head>
         <!-- Latest compiled and minified CSS -->
@@ -43,21 +47,7 @@
                 <script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
                 <script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'></script>
                 <script type="text/javascrip">
-                        $('.dropdown-toggle').click(function(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
 
-                        return false;
-                        });
-                        $('.dropdown-menu').click(function(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-
-                        return false;
-                        });
-                        $(document).ready(function () {
-                        $('.dropdown-toggle').dropdown();
-                        });
                 </script>
             </div>
         </nav>
@@ -69,6 +59,7 @@
                     <div class="form-group col-md-5">
                         <label class="col-md-6">Nome Completo</label>
                         <input type="text" class="form-control" name="cadastro_nome" placeholder="Digite o Nome">
+                        <?php echo $aluno_nome?>
                     </div>
 
                     <div class="form-group col-md-5">
