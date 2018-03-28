@@ -99,9 +99,9 @@
                         <label  class="col-md-6">Selecione o Curso</label>
                         <select class="form-control col-md-8" size="1" name="cadastro_curso">
                             <option></option>
-                            <option value="manha">Manhã</option>
-                            <option value="tarde">Tarde</option>
-                            <option value="noite">Noite</option>
+                            <option value="ADS">ADS</option>
+                            <option value="Banco de Dados">Banco de Dados</option>
+                            <option value="Corte e Custura">Corte e Custura</option>
                         </select>
                     </div>
 
