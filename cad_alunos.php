@@ -8,16 +8,17 @@ require_once 'include/phpLib_select_alunos_cadastrados.php';
 $idAluno = $_GET['idAluno'];
 $infoAluno = phpLib_get_aluno($idAluno);
 
-$nome = $infoAluno['nome'];
-$rg = $infoAluno['rg'];
-$cpf = $infoAluno['cpf'];
+$id             = $infoAluno['id'];
+$nome           = $infoAluno['nome'];
+$rg             = $infoAluno['rg'];
+$cpf            = $infoAluno['cpf'];
 $dataNascimento = $infoAluno['dataNascimento'];
-$sexo = $infoAluno['sexo'];
-$curso = $infoAluno['curso'];
-$turno = $infoAluno['turno'];
+$sexo           = $infoAluno['sexo'];
+$curso          = $infoAluno['curso'];
+$turno          = $infoAluno['turno'];
 
 
-//echo '<pre>'; print_r($curso); exit;
+echo '<pre>'; print_r($idAluno); exit;
 
 
 ?>
@@ -54,7 +55,7 @@ $turno = $infoAluno['turno'];
                             <ul class="dropdown-menu">
                                 <li><a href="cadastro.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cadastros de Usuários</font></font></a></li>
                                 <li><a href="cad_anime.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cadastros de Animes</font></font></a></li>
-                                <li><a href="index.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Qualquer coisa</font></font></a></li>
+                                <li><a href="pesq_alunos.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Pesquisar usuário</font></font></a></li>
                                 <li role="separator" class="divider"></li>
                                 <li class="dropdown-header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Texto sem link</font></font></li>
                             </ul>
@@ -116,14 +117,11 @@ $turno = $infoAluno['turno'];
                             <option value = "Noite" <?php if ($curso == "Noite") echo 'selected'; ?> >Noite</option>
                         </select>
                     </div>
-                    <div class="form-group col-md-5">
-                        <label>Anexar Foto</label>
-                        <input type="file" id="exampleInputFile">
-                        <p class="help-block">De preferência um nude.</p>
-                    </div>
                     <div class="form-group col-md-8">
-                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                        <button type="hidden" class="btn btn-danger">Apagar</button>
                     </div>
+
                 </form>
             </div>
     </body>

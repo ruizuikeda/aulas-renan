@@ -21,3 +21,20 @@ function phpLibCadastro_insert_alunos_cadastrar_novo_aluno($cadastro_nome, $cada
 }
 
 
+function phpLib_update_desabilita_aluno($idAluno){
+    $sql = "
+        UPDATE participantes
+        SET status = '0'
+        WHERE idParticipante = '$idAluno'
+    ";
+    $result = mysql_query($sql);
+
+    // validando se foi executado com sucesso
+    if(!$result) return false;
+
+    return true;
+}
+
+
+
+?>

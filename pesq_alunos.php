@@ -39,7 +39,7 @@
                                 <ul class="dropdown-menu">
                                     <li><a href="cadastro.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cadastros de Usuários</font></font></a></li>
                                     <li><a href="cad_anime.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cadastros de Animes</font></font></a></li>
-                                    <li><a href="index.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Qualquer coisa</font></font></a></li>
+                                    <li><a href="pesq_alunos.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Pesquisar usuário</font></font></a></li>
                                     <li role="separator" class="divider"></li>
                                     <li class="dropdown-header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Texto sem link</font></font></li>
 
