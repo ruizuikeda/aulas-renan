@@ -21,11 +21,26 @@ function phpLibCadastro_insert_alunos_cadastrar_novo_aluno($cadastro_nome, $cada
 }
 
 
-function phpLib_update_desabilita_aluno($idAluno){
+function phpLib_update_desabilita_aluno($id){
     $sql = "
-        UPDATE participantes
+        UPDATE alunos
         SET status = '0'
-        WHERE idParticipante = '$idAluno'
+        WHERE id = '$id'
+    ";
+    $result = mysql_query($sql);
+
+    // validando se foi executado com sucesso
+    if(!$result) return false;
+
+    return true;
+}
+
+
+function phpLib_update_atualiza_dados_aluno($id, $cadastro_nome, $cadastro_rg, $cadastro_cpf, $cadastro_dtNascimento, $cadastro_sexo, $cadastro_curso, $cadastro_turno){
+    $sql = "
+        UPDATE alunos
+        SET nome = '$cadastro_nome' , rg = '$cadastro_rg', cpf = '$cadastro_cpf', dataNascimento ='$cadastro_dtNascimento', sexo = '$cadastro_sexo', curso = '$cadastro_curso', turno = '$cadastro_turno'
+        WHERE id = '$id'
     ";
     $result = mysql_query($sql);
 

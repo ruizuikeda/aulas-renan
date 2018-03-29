@@ -17,11 +17,11 @@ $r[] = $row;
 return $r;
 }
 
-function phpLib_get_aluno($idAluno) {
+function phpLib_get_aluno($idAlunos) {
     $sql = "
 SELECT *
 FROM alunos
-WHERE id = '$idAluno' AND status = 1
+WHERE id = '$idAlunos' AND status = 1
 ";
     $result = mysql_query($sql);
     if(!$result) return array();

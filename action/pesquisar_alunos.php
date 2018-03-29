@@ -18,7 +18,7 @@ for ($i = 0; $id_alunos[$i];$i++){
     $sexo           = $id_alunos[$i]['sexo'];
     $curso          = $id_alunos[$i]['curso'];
     $turno          = $id_alunos[$i]['turno'];
-    $acoes          = "<a href= 'cad_alunos.php?idAluno=$id'>Alterar</a>";
+    $acoes          = "<a href= 'cad_alunos.php?idAluno=$id'>Alterar </a><a href= 'action/excluir_aluno.php?idAluno=$id'>/ Excluir</a>";
 /****************************************************************/
 /*  MONTANDO JSON                                               */
 /****************************************************************/

@@ -5,8 +5,8 @@
 require_once 'include/db.php';
 require_once 'include/phpLib_select_alunos_cadastrados.php';
 
-$idAluno = $_GET['idAluno'];
-$infoAluno = phpLib_get_aluno($idAluno);
+$idAlunos  = $_GET['idAluno'];
+$infoAluno = phpLib_get_aluno($idAlunos);
 
 $id             = $infoAluno['id'];
 $nome           = $infoAluno['nome'];
@@ -18,7 +18,7 @@ $curso          = $infoAluno['curso'];
 $turno          = $infoAluno['turno'];
 
 
-echo '<pre>'; print_r($idAluno); exit;
+//echo '<pre>'; print_r($infoAluno); exit;
 
 
 ?>
@@ -74,6 +74,7 @@ echo '<pre>'; print_r($idAluno); exit;
                     <h1>Cadastro de Alunos</h1>
                 </div>
                 <form action="action/inserir_cadastro_aluno.php" method="post" class="form-vertical col-md-12">
+                    <input type="hidden" name="id" value= "<?php echo $id?>">
                     <div class="form-group col-md-5">
                         <label class="col-md-6">Nome Completo</label>
                         <input type="text" class="form-control" value="<?php echo $nome?>"name="cadastro_nome" placeholder="Digite o Nome">
@@ -119,9 +120,7 @@ echo '<pre>'; print_r($idAluno); exit;
                     </div>
                     <div class="form-group col-md-8">
                         <button type="submit" class="btn btn-primary">Salvar</button>
-                        <button type="hidden" class="btn btn-danger">Apagar</button>
                     </div>
-
                 </form>
             </div>
     </body>

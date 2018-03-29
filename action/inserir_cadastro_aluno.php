@@ -5,11 +5,11 @@
 require_once '../include/db.php';
 require_once '../include/phpLib_cadastro_aluno.php';
 
-//echo '<pre>'; print_r($_POST); exit;
 
 /****************************************************************/
 /*  PARAMETROS DE ENTRADA                                       */
 /****************************************************************/
+$id                        = (int)$_POST['id'];
 $cadastro_nome             = (string)$_POST['cadastro_nome'];
 $cadastro_rg               = (string)$_POST['cadastro_rg'];
 $cadastro_cpf              = (string)$_POST['cadastro_cpf'];
@@ -18,14 +18,15 @@ $cadastro_sexo             = (string)$_POST['cadastro_sexo'];
 $cadastro_curso            = (string)$_POST['cadastro_curso'];
 $cadastro_turno            = (string)$_POST['cadastro_turno'];
 
-//echo '<pre>'; print_r($_POST); exit;
+//print_r($_POST); exit;
 
 
 
 /****************************************************************/
 /*  CONFIGURAÇÕES                                               */
 /****************************************************************/
-$retorno_sucesso        = '../cad_alunos.php?msg=0';
+$retorno_sucesso        = '../cad_alunos.php?msg=inserido';
+$retorno_sucesso2       = '../cad_alunos.php?msg=atualizado';
 $retorno_falha1         = '../cad_alunos.php?msg=1';
 $retorno_falha2         = '../cad_alunos.php?msg=2';
 $retorno_falha3         = '../cad_alunos.php?msg=3';
@@ -34,6 +35,7 @@ $retorno_falha5         = '../cad_alunos.php?msg=5';
 $retorno_falha6         = '../cad_alunos.php?msg=6';
 $retorno_falha7         = '../cad_alunos.php?msg=7';
 $retorno_falha8         = '../cad_alunos.php?msg=8';
+$retorno_falha9         = '../cad_alunos.php?msg=9';
 
 
 /****************************************************************/
@@ -91,6 +93,24 @@ if($cadastro_turno === '') {
 /****************************************************************/
 /*  SCRIPT                                                      */
 /****************************************************************/
+if ($id) {
+    $id_Aluno = phpLib_update_atualiza_dados_aluno($id, $cadastro_nome, $cadastro_rg, $cadastro_cpf, $cadastro_dtNascimento, $cadastro_sexo, $cadastro_curso, $cadastro_turno);
+//    echo 'consegui atualizar'; exit;
+    if(!$id_Aluno) {
+        header('Location: '.$retorno_falha9);
+        exit;
+    }
+
+
+
+
+/****************************************************************/
+/*  FINALIZAR ATUALIZAÇÃO                                       */
+/****************************************************************/
+    header('Location: '.$retorno_sucesso2);
+    exit;
+} else {
+
 $idAluno = phpLibCadastro_insert_alunos_cadastrar_novo_aluno($cadastro_nome, $cadastro_rg, $cadastro_cpf, $cadastro_dtNascimento, $cadastro_sexo, $cadastro_curso, $cadastro_turno);
 if(!$idAluno) {
     header('Location: '.$retorno_falha8);
@@ -98,10 +118,9 @@ if(!$idAluno) {
 }
 
 
-
-
 /****************************************************************/
-/*  FINALIZAR                                                   */
+/*  FINALIZAR INSERÇÃO                                          */
 /****************************************************************/
 header('Location: '.$retorno_sucesso);
 exit;
+}
