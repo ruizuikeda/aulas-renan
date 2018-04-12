@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Brincando de JS</title>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="jumbotron">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label>texto</label>
+                                <input type="text" id="idTexto" name="texto" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="col-xs-offset-4 col-xs-4">
+                            <button class="btn btn-block btn-primary" id="idBtn" disabled>Botão</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <script type="application/javascript">
+            window.onload = function(){
+                console.log('load');
+
+                var campoTexto = document.getElementById('idTexto');
+                console.log('campoTexto', campoTexto);
+
+                var btn = document.getElementById('idBtn');
+                console.log('btn', btn);
+
+                campoTexto.onkeyup = function(value){
+                    console.log(value);
+
+                    if(value.key == '@') {
+                        btn.className = 'btn btn-block btn-danger';
+                    } else {
+                        btn.className = 'btn btn-block btn-primary';
+                    }
+
+
+                    var textoCompleto = campoTexto.value;
+                    if(textoCompleto != '') {
+                        btn.disabled = false;
+                    } else {
+                        btn.disabled = true;
+                    }
+                    console.log('textoCompleto', textoCompleto);
+                };
+            };
+        </script>
+
+    </body>
+</html>
