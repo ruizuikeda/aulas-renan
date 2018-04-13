@@ -51,18 +51,18 @@
                         senha: senha
                     };
 
-
                     // post
                     $.post(url, params).done(function(dadoDeRetorno){
                         console.log("done!!!");
                         console.log('dadoDeRetorno', dadoDeRetorno);
                         if(dadoDeRetorno == 1) {
                             // pode entrar
-                            console.log('pode entrar');
+                            alert("Bem Vindo ");
+                            window.location.href = "teste_js.html";
                         } else {
                             // não pode entrar
-                            console.log('não pode entrar');
-                        }
+                            alert("Senha erra seu burro");
+                        };
                     }).fail(function(event, statusCode, ajaxSettings, thrownError){
                         console.log("ERRRORRRRRR", statusCode);
                     });

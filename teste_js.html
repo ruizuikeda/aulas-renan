@@ -9,9 +9,55 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+        </script>
+        <script src="js/jquery-1.7.2.min.js"></script>
+        <script src="js/lightbox.js"></script>
+        <link href="css/lightbox.css" rel="stylesheet" />
+
     </head>
     <body>
+        <!--
+<p>Galeria</p>
+<a href="images/imagem1.jpg" rel="lightbox[roadtrip]">image #1</a>
+<a href="images/imagem2.png" rel="lightbox[roadtrip]">image #2</a>
+<a href="images/imagem3.jpg" rel="lightbox[roadtrip]">image #3</a>
+-->
+        <div id="gallery">
+            <ul>
+                <li>
+                    <a href="imagens/imagem1.jpg" rel="lightbox" title="Imagem 1"><img src="imagens/imagem1.jpg" width="160" height="160" alt="" title="Img#1" /></a>
+                    <a href="imagens/imagem2.png" rel="lightbox" title="Imagem 2"><img src="imagens/imagem2.png" width="160" height="160" alt="" title="Img#2" /></a>
+                    <a href="imagens/imagem3.jpg" rel="lightbox" title="Imagem 3"><img src="imagens/imagem3.jpg" width="160" height="160" alt="" title="Img#3" /></a>
+                </li><br/>
+            </ul>
 
-    </body>
-</html>
+            <script type="text/javascript">
+                $(function() {
+                    $('#gallery a').lightBox();
+                });
+            </script>
+            <style type="text/css">
+                /* jQuery lightBox plugin - Gallery style */
+                #gallery {
+                    background-color: #fff;
+                    padding: 10px;
+                    width: auto;
+                }
+                #gallery ul { list-style: none; }
+                #gallery ul li { display: inline; }
+                #gallery ul img {
+                    border: 5px solid #444444;
+                    border-width: 5px 5px 20px;
+                }
+                #gallery ul a:hover img {
+                    border: 5px solid #fff;
+                    border-width: 5px 5px 20px;
+                    color: #fff;
+                }
+                #gallery ul a:hover { color: #fff; }
+            </style>
+
+
+            </body>
+        </html>
