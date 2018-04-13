@@ -12,55 +12,62 @@
     </head>
     <body>
         <div class="container">
-            <form class="form-signin" action="teste_js.html">
-                <h2 class="form-signin-heading">Login</h2>
-                <label for="inputEmail" class="sr-only">Email address</label>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                <label for="inputPassword" class="sr-only">Password</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" id="idRadio" value= "false"> Aceito os termos
+            <!--            <form class="form-signin" id="myForm">-->
+            <h2 class="form-signin-heading">Login</h2>
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" autofocus>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" id="idRadio" value= "false"> Aceito os termos
 
-                    </label>
-                </div>
-                <button class="btn btn-lg btn-primary btn-block" id="btnSign" type="submit" disabled>Sign in</button>
-            </form>
-            <script type="application/javascript">
-                window.onload = function(){
-                    console.log('carregado');
-                    var campoTexto = document.getElementById('inputEmail');
-                    console.log('campoTexto', campoTexto);
-                    var campoSenha = document.getElementById('inputPassword');
-                    console.log('campoSenha', campoSenha);
-                    var btnSub = document.getElementById('btnSign');
-                    console.log('btnSub', btnSub);
-                    var radioCheck =document.getElementById('idRadio');
-                    console.log('radioCheck', radioCheck)
-
-                    function redirecionar(){
-                        alert("Bem Vindo");
-                        location.href="teste_js.html";
+                </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" id="btnSign" type="submit">Sign in</button>
+            <!--            </form>-->
+        </div>
 
 
+        <script type="application/javascript">
+
+            // Jquery
+            $(document).ready(function(){
+                console.log('window onload em jquery');
+
+                // quando clicar no botão enviar
+                var btnSign = document.getElementById('btnSign');
+                btnSign.onclick = function(){
+                    console.log('clicou no botão enviar');
+
+                    // pegando valores
+                    var login = document.getElementById('inputEmail').value;
+                    var senha = document.getElementById('inputPassword').value;
+
+                    // enviar para o script login_js.php
+                    var url = "action/login_js.php";
+                    var params = {
+                        login: login,
+                        senha: senha
                     };
-                    btnSub.onclick = redirecionar;
 
 
-                    window.onkeyup = function(){
-                        var login = campoTexto.value;
-                        var senha = campoSenha.value;
-                        var check = radioCheck.value;
-
-                        if (login && senha && check != false){
-                            btnSub.disabled = false;
+                    // post
+                    $.post(url, params).done(function(dadoDeRetorno){
+                        console.log("done!!!");
+                        console.log('dadoDeRetorno', dadoDeRetorno);
+                        if(dadoDeRetorno == 1) {
+                            // pode entrar
+                            console.log('pode entrar');
                         } else {
-                            btnSub.disabled = true;
+                            // não pode entrar
+                            console.log('não pode entrar');
                         }
-                    };
-
-
+                    }).fail(function(event, statusCode, ajaxSettings, thrownError){
+                        console.log("ERRRORRRRRR", statusCode);
+                    });
                 };
-            </script>
-            </body>
-        </html>
+            });
+        </script>
+    </body>
+</html>
