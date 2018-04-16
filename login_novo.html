@@ -3,12 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <title>Login Com JS</title>
-
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -16,30 +16,56 @@
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="https://www.betocarrero.com.br/">Tela de Login</a>
                 </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <form class="navbar-form navbar-right">
-                        <div class="form-group">
-                            <input type="text" placeholder="Email" id="campoEmail" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" placeholder="Senha" id="campoSenha"class="form-control">
-                        </div>
-                        <button type="submit" class="btn btn-success">Sign in</button>
-                    </form>
+                <div id="navbar" class="navbar-collapse collapse navbar-form navbar-right">
+                    <div class="form-group" >
+                        <input type="text" placeholder="Email" id="campoEmail" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Senha" id="campoSenha"class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-success" id="btnLogar">Sign in</button>
                 </div>
             </div>
         </nav>
         <div> <img src="imagens/berserk.jpg" class="img-responsive"/>
         </div>
         <script type="application/javascript">
-            $(document)
+            //Jquery
+            $(document).ready(function(){
+
+                //Evento do botão Enviar
+                var btnLogar = document.getElementById('btnLogar');
+                btnLogar.onclick = function(){
+
+                    //pegar os dados do Login
+                    var campoEmail = document.getElementById('campoEmail').value;
+                    var campoSenha = document.getElementById('campoSenha').value;
+
+                    //Enviar para o validador
+                    var url = "action/login_js.php";
+                    var params = {
+                        login:campoEmail,
+                        senha:campoSenha
+                    };
+
+                    //Postando informações
+                    $.post(url,params).done(function(retornoValidador){
+                        if(retornoValidador == 1)  {
+                            alert("Bem vindo");
+                            window.location.href = "https://trello.com/";
+                        } else {
+                            alert("Usuário ou senha incorreta");
+                        }
+                    });
 
 
+                };
+
+            });
+
+        </script>
     </body>
 </html>
