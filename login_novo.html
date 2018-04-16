@@ -8,7 +8,7 @@
 
 
     </head>
-    <body>
+    <body background = "imagens/berserk.jpg" >
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -19,67 +19,74 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse navbar-form navbar-right">
                     <div class="form-group" >
-                        <input type="text" placeholder="Email" id="campoEmail" class="form-control form-valida">
+                        <input type="text" placeholder="Email" id="campo_Email" class="form-control form-valida">
                     </div>
                     <div class="form-group">
-                        <input type="password" placeholder="Senha" id="campoSenha"class="form-control form-valida">
+                        <input type="password" placeholder="Senha" id="campo_Senha"class="form-control form-valida">
                     </div>
-                    <button type="submit" class="btn btn-success" id="btnLogar" disabled>Sign in</button>
+                    <button type="submit" class="btn btn-success" id="btn_Logar" disabled>Sign in</button>
+                    <div>
+                        <button type="submit" class="btn btn-danger" id="btn_Deslogar" style="display: none">Sign Out</button>
+                    </div>
                 </div>
+
             </div>
         </nav>
-        <div> <img src="imagens/berserk.jpg" class="img-responsive"/>
+        <!--        <div> <img src="imagens/berserk.jpg" class="img-responsive"/>-->
+
         </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 
-        <script type="application/javascript">
-            //Jquery
-            $(document).ready(function(){
-                var campoEmail = document.getElementById('campoEmail');
-                var campoSenha = document.getElementById('campoSenha');
-                var btnLogar   = document.getElementById('btnLogar');
+    <script type="application/javascript">
+        //Jquery
+        $(document).ready(function(){
+            var campoEmail = document.getElementById('campo_Email');
+            var campoSenha = document.getElementById('campo_Senha');
+            var btnLogar   = document.getElementById('btn_Logar');
+            var btnDeslogar= document.getElementById('btn_Deslogar');
+
+            $(".form-valida").keydown(function(){
+                if(campoEmail.value != '' && campoSenha.value != ''){
+                    console.log('saporra');
+                    btnLogar.disabled = false;
+                } else {
+                    console.log('saporra2');
+                    btnLogar.disabled = true;
+                }
+            });
+
+            //Evento do botão Enviar
+            var btnLogar = document.getElementById('btn_Logar');
+            btnLogar.onclick = function(){
+
+                //pegar os dados do Login
+                var campoEmail = document.getElementById('campo_Email').value;
+                var campoSenha = document.getElementById('campo_Senha').value;
+
+                //Enviar para o validador
+                var url = "action/login_js.php";
+                var params = {
+                    login:campoEmail,
+                    senha:campoSenha
+                };
+
+                //Postando informações
+                $.post(url,params).done(function(retornoValidador){
+                    if(retornoValidador == 1)  {
+                        console.log('DEU BOM');
+                        $(btnDeslogar).show();
 
 
-                $(".form-valida").keydown(function(){
-                    console.log(campoEmail.value.length);
-                    console.log(campoSenha.value.length);
-                    if(campoEmail.value != '' && campoSenha.value != ''){
-                        console.log('saporra');
-                        btnLogar.disabled = false;
+
                     } else {
-                        console.log('saporra2');
-                        btnLogar.disabled = true;
+                        alert("Usuário ou senha incorreta");
+
                     }
                 });
-
-                //Evento do botão Enviar
-                var btnLogar = document.getElementById('btnLogar');
-                btnLogar.onclick = function(){
-
-                    //pegar os dados do Login
-                    var campoEmail = document.getElementById('campoEmail').value;
-                    var campoSenha = document.getElementById('campoSenha').value;
-
-                    //Enviar para o validador
-                    var url = "action/login_js.php";
-                    var params = {
-                        login:campoEmail,
-                        senha:campoSenha
-                    };
-
-                    //Postando informações
-                    $.post(url,params).done(function(retornoValidador){
-                        if(retornoValidador == 1)  {
-                            alert("Bem vindo");
-                            window.location.href = "https://trello.com/";
-                        } else {
-                            alert("Usuário ou senha incorreta");
-                        }
-                    });
-                };
-            });
-        </script>
+            };
+        });
+    </script>
     </body>
 </html>
