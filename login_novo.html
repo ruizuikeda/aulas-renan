@@ -5,10 +5,8 @@
         <title>Login Com JS</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -21,20 +19,40 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse navbar-form navbar-right">
                     <div class="form-group" >
-                        <input type="text" placeholder="Email" id="campoEmail" class="form-control">
+                        <input type="text" placeholder="Email" id="campoEmail" class="form-control form-valida">
                     </div>
                     <div class="form-group">
-                        <input type="password" placeholder="Senha" id="campoSenha"class="form-control">
+                        <input type="password" placeholder="Senha" id="campoSenha"class="form-control form-valida">
                     </div>
-                    <button type="submit" class="btn btn-success" id="btnLogar">Sign in</button>
+                    <button type="submit" class="btn btn-success" id="btnLogar" disabled>Sign in</button>
                 </div>
             </div>
         </nav>
         <div> <img src="imagens/berserk.jpg" class="img-responsive"/>
         </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
         <script type="application/javascript">
             //Jquery
             $(document).ready(function(){
+                var campoEmail = document.getElementById('campoEmail');
+                var campoSenha = document.getElementById('campoSenha');
+                var btnLogar = document.getElementById('btnLogar');
+
+
+                $(".form-valida").keydown(function(){
+                    console.log(campoEmail.value.length);
+                    console.log(campoSenha.value.length);
+                    if(campoEmail.value != '' && campoSenha.value != ''){
+                        console.log('saporra');
+                        btnLogar.disabled = false;
+                    } else {
+                        console.log('saporra2');
+                        btnLogar.disabled = true;
+                    }
+                });
 
                 //Evento do botão Enviar
                 var btnLogar = document.getElementById('btnLogar');
@@ -60,12 +78,8 @@
                             alert("Usuário ou senha incorreta");
                         }
                     });
-
-
                 };
-
             });
-
         </script>
     </body>
 </html>
