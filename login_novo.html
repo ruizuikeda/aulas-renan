@@ -22,12 +22,11 @@
                         <input type="text" placeholder="Email" id="campo_Email" class="form-control form-valida">
                     </div>
                     <div class="form-group">
-                        <input type="password" placeholder="Senha" id="campo_Senha"class="form-control form-valida">
+                        <input type="password" placeholder="Senha" id="campo_Senha" class="form-control form-valida">
                     </div>
                     <button type="submit" class="btn btn-success" id="btn_Logar" disabled>Sign in</button>
-                    <div>
-                        <button type="submit" class="btn btn-danger" id="btn_Deslogar" style="display: none">Sign Out</button>
-                    </div>
+                    <button type="submit" class="btn btn-danger" id="btn_Deslogar" style="display: none">Sign Out</button>
+
                 </div>
 
             </div>
@@ -42,8 +41,8 @@
     <script type="application/javascript">
         //Jquery
         $(document).ready(function(){
-            var campoEmail = document.getElementById('campo_Email');
-            var campoSenha = document.getElementById('campo_Senha');
+            var campoEmail = document.getElementById('campo_Email').disabled=false;
+            var campoSenha = document.getElementById('campo_Senha').disabled=false;
             var btnLogar   = document.getElementById('btn_Logar');
             var btnDeslogar= document.getElementById('btn_Deslogar');
 
@@ -76,8 +75,11 @@
                 $.post(url,params).done(function(retornoValidador){
                     if(retornoValidador == 1)  {
                         console.log('DEU BOM');
-                        $(btnDeslogar).show();
 
+                        $(btnDeslogar).show();
+                        btnLogar.disabled   = true;
+                        campoEmail.disabled = true;
+                        campoSenha.disabled = true;
 
 
                     } else {
