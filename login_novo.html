@@ -74,13 +74,14 @@
                 //Postando informações
                 $.post(url,params).done(function(retornoValidador){
                     if(retornoValidador == 1)  {
-                        console.log('DEU BOM');
 
-                        $(btnDeslogar).show();
+                        document.getElementById('campo_Email').disabled = true;
+                        document.getElementById('campo_Senha').disabled = true;
+
                         btnLogar.disabled   = true;
-                        campoEmail.disabled = true;
-                        campoSenha.disabled = true;
+                        $(btnDeslogar).show();
 
+                        console.log('DEU BOM');
 
                     } else {
                         alert("Usuário ou senha incorreta");
